@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="'en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let computerScore=0,playerScore=0;
+            game();
+            function game(){
+                for(let i=0;i<5;i++){
+                    let computerChoice=getComputerChoice();
+                    let playerChoice=prompt("Please choose Rock/Paper/Scissors..");
+                    let result=playRound(computerChoice,playerChoice);
+                    console.log(result);
+                }
+            }
+            function getComputerChoice(){
+                let randomNumber=Math.floor(Math.random()*3+ 1);
+                if(randomNumber==1){
+                    return('rock');
+                }else if(randomNumber==2){
+                    return('paper');
+                }else{
+                    return('scissors');
+                }
+            }
+            function playRound(computerChoice,playerChoice){
+                let cChoice=computerChoice.toUpperCase();
+                let pChoice=playerChoice.toUpperCase();
+                if(cChoice==pChoice){
+                    return("Draw");
+                }else if(cChoice=='ROCK' && pChoice=='PAPER'){
+                    return("You win. Paper wins against rock.");
+                    playerChoice++;
+                }else if(cChoice=='ROCK' && pChoice=='SCISSORS'){
+                    return("You lose. Scissors loses against rock.")
+                    computerScore++;
+                }else if(cChoice=='PAPER' && pChoice=='SCISSORS'){
+                    return("You win. Scissors wins against paper.");
+                    playerScore++;
+                }else if(cChoice=='PAPER' && pChoice=='ROCK'){
+                    return("You lose. Rock loses against paper.")
+                    computerScore++;
+                }else if(cChoice=='SCISSORS' && pChoice=='ROCK'){
+                    return("You win. Rock wins against scissors.");
+                    playerScore++;
+                }else if(cChoice=='SCISSORS' && pChoice=='PAPER'){
+                    return("You lose. paper loses against scissors.")
+                    computerScore++;
+                }else{
+                    console.log('Invalid choice');
+                }
+            }
+            if(computerScore>playerScore){
+                console.log('You lose the game.')
+            }else if(computerScore<playerScore){
+                console.log('You win the game');
+            }else{
+                console.log('Draw');
+            }
+        </script>
+    </body>
+</html>
+      
