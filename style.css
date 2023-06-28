@@ -1,0 +1,29 @@
+.main{
+    display: flex;
+    gap:15px;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(59, 55, 55);
+    color: white;
+}
+button{
+    background-color: rgb(94, 102, 99);
+    border-radius: 10px;
+    width: 20%;
+    height: 10%;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+.result{
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(59, 55, 55);
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+}
